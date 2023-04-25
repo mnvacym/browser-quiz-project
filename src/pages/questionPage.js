@@ -45,7 +45,6 @@ const nextQuestion = () => {
   initQuestionPage();
 };
 
-
 function checkAnswer(questionIndex, selectedAnswer) {
   const currentQuestion = quizData.questions[questionIndex];
   const correctAnswer = currentQuestion.correct;
@@ -70,5 +69,7 @@ const result = checkAnswer(questionIndex, selectedAnswer);
 if (result.isCorrect) {
   console.log('Correct answer!');
 } else {
-  console.log(`Incorrect answer. The correct answer is ${result.correctAnswer}.`);
+  console.log(
+    `Incorrect answer. The correct answer is ${result.correctAnswer}.`
+  );
 }
