@@ -5,7 +5,8 @@
 }
 /* Html */
 html {
-  background: url(https://wallpaperaccess.com/full/4745439.jpg) no-repeat center center fixed;
+  background: url(https://wallpaperaccess.com/full/4745439.jpg) no-repeat center
+    center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -30,7 +31,7 @@ html {
 /* welcome-heading */
 .welcome-heading {
   margin-bottom: 2rem;
-  color: #FFF;
+  color: #fff;
 }
 
 /* start quiz button*/
@@ -48,7 +49,7 @@ html {
 
 .welcome-button:hover {
   background-color: rgb(58, 51, 51);
-  color: #FFF;
+  color: #fff;
 }
 
 /* centered  */
@@ -150,7 +151,6 @@ footer ul li a {
 
 /* Styles for screens between 481px and 768px */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-
   .answer-ul {
     margin: 0 auto;
     width: 90%;
@@ -164,7 +164,6 @@ footer ul li a {
 
 /* Styles for screens between 769px and 1024px */
 @media only screen and (min-width: 768px) and (max-width: 1124px) {
-
   .answer-ul {
     margin: 0 auto;
     width: 90%;
@@ -178,7 +177,6 @@ footer ul li a {
 
 /* Styles for screens between 769px and 1024px */
 @media only screen and (min-width: 1124px) and (max-width: 1424px) {
-
   .answer-ul {
     margin: 0 auto;
     width: 90%;
@@ -188,5 +186,4 @@ footer ul li a {
     padding: 1rem;
     font-size: 1.3rem;
   }
-
 }

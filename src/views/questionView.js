@@ -6,9 +6,9 @@ import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
  * @returns {Element}
  */
 export const createQuestionElement = (question) => {
-  const element = Object.assign(document.createElement('div'),{
-    className : 'question-div'
-  })
+  const element = Object.assign(document.createElement('div'), {
+    className: 'question-div',
+  });
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
