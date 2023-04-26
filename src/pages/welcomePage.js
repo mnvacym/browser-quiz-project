@@ -14,7 +14,6 @@ export const initWelcomePage = () => {
     .addEventListener('click', startQuiz);
 };
 
-
 const headerEl = document.querySelector('.header');
 
 console.log(headerEl);
