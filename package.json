@@ -2,8 +2,9 @@
   "name": "js-quiz-starter",
   "version": "1.0.0",
   "scripts": {
-    "prettier:write": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier": "prettier --check .",
+    "prettier:check": "npm run prettier",
+    "prettier:fix": "prettier --write ."
   },
   "repository": {
     "type": "git",
