@@ -1,5 +1,4 @@
 import { quizData } from '../data.js';
-import { createQuestionElement } from './questionView.js';
 
 /**
  * Create an Answer element
@@ -15,20 +14,3 @@ export const createAnswerElement = (key, answerText) => {
   `;
   return element;
 };
-
-// const viewQuestion = () => {
-//   let currentQuestion = quizData[quizData.currentQuestionIndex];
-//   const userInterface = document.getElementById('user-interface');
-//   userInterface.innerHTML = createQuestionElement(currentQuestion);
-
-// for (const element of Object.entries(currentQuestion)) {
-//   element.textContent = answerText;
-//   answerListElement.appendChild(element);
-// }
-// document
-//   .getElementById('next-question-button')
-//   .addEventListener('click', () => {
-//     currentQuestionIndex++;
-//     viewQuestion();
-//   });
-// };
