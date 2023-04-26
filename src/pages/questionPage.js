@@ -19,9 +19,26 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
+  // const selectAnswer = (answerElement) => {
+  //   const answers = document.querySelectorAll('li');
+  //   answers.forEach((answer) => answer.classList.remove('selected'));
+  //   answerElement.classList.add('selected');
+  // };
+  const selectAnswer = (selectedAnswer) => {
+    console.log(` ${selectedAnswer}`);
+  };
+
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
+    // answerElement.addEventListener('click', () => {
+    //   selectAnswer(answerElement);
+    // });
+    // console.log(answerElement);
+    answerElement.addEventListener('click', () => {
+      selectAnswer(key);
+    });
     answersListElement.appendChild(answerElement);
+    // console.log(answersListElement);
   }
 
   document
