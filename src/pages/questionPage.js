@@ -26,8 +26,8 @@ export const initQuestionPage = () => {
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion);
-};
+    .addEventListener('click', nextQuestion); 
+  };
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
