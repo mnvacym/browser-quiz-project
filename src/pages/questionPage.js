@@ -34,3 +34,32 @@ const nextQuestion = () => {
 
   initQuestionPage();
 };
+
+function checkAnswer(questionIndex, selectedAnswer) {
+  const currentQuestion = quizData.questions[questionIndex];
+  const correctAnswer = currentQuestion.correct;
+  const isCorrect = correctAnswer === selectedAnswer;
+
+  if (!isCorrect) {
+    // if the answer is incorrect, return the correct answer
+    return { isCorrect: false, correctAnswer };
+  }
+
+  // if the answer is correct, return true
+  return { isCorrect: true };
+}
+
+// assume the user selected answer 'a' for question 0
+const selectedAnswer = 'a';
+const questionIndex = 0;
+
+// check the answer and display the result to the user
+const result = checkAnswer(questionIndex, selectedAnswer);
+
+if (result.isCorrect) {
+  console.log('Correct answer!');
+} else {
+  console.log(
+    `Incorrect answer. The correct answer is ${result.correctAnswer}.`
+  );
+}
