@@ -5,7 +5,7 @@ export const createTimer = (timer) => {
   const timerElement = Object.assign(document.createElement('div'), {
     className: 'timer-div',
   });
-
+ 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   timerElement.innerHTML = String.raw`
        <h1> ${timer}</h1>
