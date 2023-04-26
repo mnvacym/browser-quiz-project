@@ -3,10 +3,9 @@ import { TIMER_QUESTION_ID } from '../constants.js';
 export const createTimer = (timer) => {
   // div timer
   const timerElement = Object.assign(document.createElement('div'), {
-    className: 'timmer-div',
+    className: 'timer-div',
   });
 
-  console.log(timerElement);
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   timerElement.innerHTML = String.raw`
        <h1> ${timer}</h1>
