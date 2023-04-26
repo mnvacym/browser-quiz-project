@@ -19,8 +19,18 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
+  const selectAnswer = (answerElement) => {
+    const answers = document.querySelectorAll('li');
+    answers.forEach((answer) => answer.classList.remove('selected'));
+    answerElement.classList.add('selected');
+  };
+
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
+    console.log(answerElement);
+    answerElement.addEventListener('click', (event) => {
+      selectAnswer(event.target);
+    });
     answersListElement.appendChild(answerElement);
   }
 
