@@ -5,10 +5,19 @@ import { START_QUIZ_BUTTON_ID } from '../constants.js';
  * @returns {Element}
  */
 export const createWelcomeElement = () => {
-  const element = document.createElement('div');
+  const element = Object.assign(document.createElement('div'), {
+    className: 'welcome-page',
+  });
+
   element.innerHTML = String.raw`
+
+    <h1 class='welcome-heading'>Welcome to our quiz App</h1>
+    <button class='welcome-button' id="${START_QUIZ_BUTTON_ID}">start quiz</button>
+
     <h1>Want to know more about the Netherlands? Have fun with our quiz🚀</h1>
     <button id="${START_QUIZ_BUTTON_ID}">start quiz</button>
+
   `;
+
   return element;
 };
