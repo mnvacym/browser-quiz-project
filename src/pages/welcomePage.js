@@ -16,7 +16,7 @@ export const initWelcomePage = () => {
 
 const headerEl = document.querySelector('.header');
 
-console.log(headerEl);
+// console.log(headerEl);
 const startQuiz = () => {
   initQuestionPage();
   // When user click start quiz header will be disappear
