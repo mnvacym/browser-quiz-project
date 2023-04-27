@@ -102,6 +102,9 @@ ul {
   transition: ease-in-out 0.5s;
   font-weight: bold;
 }
+.correct {
+  background-color: green;
+}
 
 .answer-list:hover {
   border: 2px solid green;

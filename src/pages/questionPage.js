@@ -26,50 +26,32 @@ export const initQuestionPage = () => {
   };
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
+    const theCorrectAnswer = currentQuestion.correct;
     const answerElement = createAnswerElement(key, answerText);
     console.log(answerElement);
     answerElement.addEventListener('click', (event) => {
       selectAnswer(event.target);
+      const selectedElement = document.querySelector('.selected');
+      if (key === theCorrectAnswer) {
+        selectedElement.style.backgroundColor = 'green';
+      } else {
+        const correctElement = document.querySelector(
+          `li[data-key="${theCorrectAnswer}"]`
+        );
+        selectedElement.style.backgroundColor = 'red';
+        correctElement.style.backgroundColor = 'green';
+      }
     });
     answersListElement.appendChild(answerElement);
   }
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion); 
-  };
+    .addEventListener('click', nextQuestion);
+};
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
 };
-
-function checkAnswer(questionIndex, selectedAnswer) {
-  const currentQuestion = quizData.questions[questionIndex];
-  const correctAnswer = currentQuestion.correct;
-  const isCorrect = correctAnswer === selectedAnswer;
-
-  if (!isCorrect) {
-    // if the answer is incorrect, return the correct answer
-    return { isCorrect: false, correctAnswer };
-  }
-
-  // if the answer is correct, return true
-  return { isCorrect: true };
-}
-
-// assume the user selected answer 'a' for question 0
-const selectedAnswer = 'a';
-const questionIndex = 0;
-
-// check the answer and display the result to the user
-const result = checkAnswer(questionIndex, selectedAnswer);
-
-if (result.isCorrect) {
-  console.log('Correct answer!');
-} else {
-  console.log(
-    `Incorrect answer. The correct answer is ${result.correctAnswer}.`
-  );
-}
