@@ -14,7 +14,7 @@ html {
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* headeer */
+/* header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -102,7 +102,15 @@ ul {
   transition: ease-in-out 0.5s;
   font-weight: bold;
 }
-
+.correct {
+  background-color: green;
+}
+.wrong {
+  background-color: red;
+}
+.disabled {
+  pointer-events: none;
+}
 .answer-list:hover {
   border: 2px solid green;
 }

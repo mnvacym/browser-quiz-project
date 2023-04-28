@@ -19,57 +19,40 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-  const selectAnswer = (answerElement) => {
-    const answers = document.querySelectorAll('li');
-    answers.forEach((answer) => answer.classList.remove('selected'));
-    answerElement.classList.add('selected');
-  };
-
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
+    const theCorrectAnswer = currentQuestion.correct;
     const answerElement = createAnswerElement(key, answerText);
-    console.log(answerElement);
+    const allOptions = document.querySelector('.answer-ul').children;
+
     answerElement.addEventListener('click', (event) => {
-      selectAnswer(event.target);
+      const selectedElement = event.target;
+      if (key === theCorrectAnswer) {
+        selectedElement.classList.add('correct');
+
+        for (const option of allOptions) {
+          option.classList.add('disabled');
+        }
+      } else {
+        selectedElement.classList.add('wrong');
+        console.log('----------- alloptions', allOptions);
+        for (const option of allOptions) {
+          if (option.innerText[0] === theCorrectAnswer) {
+            option.classList.add('correct');
+          }
+          option.classList.add('disabled');
+        }
+      }
     });
     answersListElement.appendChild(answerElement);
   }
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion); 
-  };
+    .addEventListener('click', nextQuestion);
+};
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
 };
-
-function checkAnswer(questionIndex, selectedAnswer) {
-  const currentQuestion = quizData.questions[questionIndex];
-  const correctAnswer = currentQuestion.correct;
-  const isCorrect = correctAnswer === selectedAnswer;
-
-  if (!isCorrect) {
-    // if the answer is incorrect, return the correct answer
-    return { isCorrect: false, correctAnswer };
-  }
-
-  // if the answer is correct, return true
-  return { isCorrect: true };
-}
-
-// assume the user selected answer 'a' for question 0
-const selectedAnswer = 'a';
-const questionIndex = 0;
-
-// check the answer and display the result to the user
-const result = checkAnswer(questionIndex, selectedAnswer);
-
-if (result.isCorrect) {
-  console.log('Correct answer!');
-} else {
-  console.log(
-    `Incorrect answer. The correct answer is ${result.correctAnswer}.`
-  );
-}
