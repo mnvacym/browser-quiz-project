@@ -11,9 +11,14 @@ export const initTimer = () => {
     userInterface.innerHTML = '';
     const timer = createTimer();
     userInterface.appendChild(timer);
+
     //  setInterval() function is used to execute the callback function
     timerInterval = setInterval(() => {
       //  incrementing the seconds
+
+
+    timerInterval = setInterval(() => {
+
       seconds++;
       if (seconds === 60) {
         seconds = 0;
