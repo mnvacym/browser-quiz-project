@@ -9,8 +9,7 @@ export const createQuestionElement = (question) => {
   const element = Object.assign(document.createElement('div'), {
     className: 'question-div',
   });
-  // <div id="${TIMER_QUESTION_ID}"></div>
-  //<div id="${USER_QUIT_BUTTON_ID}</div>
+  
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
 
