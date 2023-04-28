@@ -2,11 +2,14 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  SCORE_DISPLAY_ID,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
+import { createScoreElement } from '../views/scoreView.js';
 import { quizData } from '../data.js';
 
+let score = 0;
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -16,7 +19,9 @@ export const initQuestionPage = () => {
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
+  const scoreElement = createScoreElement();
 
+  userInterface.appendChild(scoreElement);
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
@@ -28,6 +33,7 @@ export const initQuestionPage = () => {
       const selectedElement = event.target;
       if (key === theCorrectAnswer) {
         selectedElement.classList.add('correct');
+        score++;
 
         for (const option of allOptions) {
           option.classList.add('disabled');
@@ -43,12 +49,22 @@ export const initQuestionPage = () => {
         }
       }
     });
+
     answersListElement.appendChild(answerElement);
   }
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
+  const updateScore = (score) => {
+    const scoreDisplay = document.getElementById(SCORE_DISPLAY_ID);
+    scoreDisplay.innerHTML = `Score: ${score}`;
+  };
+
+  updateScore();
+  console.log(score);
+  console.log(currentQuestion.correct);
+  console.log(key);
 };
 
 const nextQuestion = () => {
