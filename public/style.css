@@ -6,7 +6,7 @@
 
 /* define variable */
 :root {
-  --primary-color: #FFA500; 
+  --primary-color: #ffa500;
 }
 /* Html */
 html {
@@ -30,13 +30,13 @@ html {
 }
 
 .header .your {
-  color:  var(--primary-color);
+  color: var(--primary-color);
 }
 
 /* user-timer */
 #user-timer {
   text-align: center;
-  color:  var(--primary-color);
+  color: var(--primary-color);
   padding-top: 1rem;
   font-size: 2rem;
   font-weight: bold;
@@ -117,7 +117,7 @@ ul {
 }
 
 .answer-list:hover {
-  border: 2px solid  var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 /* answer-ul */
@@ -139,11 +139,9 @@ ul {
 }
 
 .next-button:hover {
-  background-color:  var(--primary-color);
+  background-color: var(--primary-color);
   color: #fff;
 }
-
-
 
 /* Footer */
 footer {
