@@ -18,21 +18,13 @@ export const initQuestionPage = (quizDataFromLocalStorage = []) => {
 
   const currentQuestion =
     customQuizData.questions[quizData.currentQuestionIndex];
-  console.log('=====currentQuestion', currentQuestion);
-
   const questionElement = createQuestionElement(currentQuestion.text);
-
   userInterface.appendChild(questionElement);
-
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
-
-
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const theCorrectAnswer = currentQuestion.correct;
-
+    const correctAnswer = currentQuestion.correct;
     const answerElement = createAnswerElement(key, answerText);
     const allOptions = document.querySelector('.answer-ul').children;
-
     answerElement.addEventListener('click', (event) => {
       const selectedElement = event.target;
 
