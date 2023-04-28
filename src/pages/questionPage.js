@@ -19,17 +19,29 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-  const selectAnswer = (answerElement) => {
-    const answers = document.querySelectorAll('li');
-    answers.forEach((answer) => answer.classList.remove('selected'));
-    answerElement.classList.add('selected');
-  };
-
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
+    const theCorrectAnswer = currentQuestion.correct;
     const answerElement = createAnswerElement(key, answerText);
-    console.log(answerElement);
+    const allOptions = document.querySelector('.answer-ul').children;
+
     answerElement.addEventListener('click', (event) => {
-      selectAnswer(event.target);
+      const selectedElement = event.target;
+      if (key === theCorrectAnswer) {
+        selectedElement.classList.add('correct');
+
+        for (const option of allOptions) {
+          option.classList.add('disabled');
+        }
+      } else {
+        selectedElement.classList.add('wrong');
+
+        for (const option of allOptions) {
+          if (option.innerText[0] === theCorrectAnswer) {
+            option.classList.add('correct');
+          }
+          option.classList.add('disabled');
+        }
+      }
     });
     answersListElement.appendChild(answerElement);
   }
