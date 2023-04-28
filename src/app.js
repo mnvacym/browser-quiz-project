@@ -14,9 +14,6 @@ const loadApp = () => {
     initWelcomePage();
     quizData.currentQuestionIndex = 0;
   }
-
-import { initTimer } from './pages/timerPage.js';
-
 };
 
 window.addEventListener('load', loadApp);
