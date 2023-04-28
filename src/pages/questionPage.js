@@ -24,29 +24,29 @@ export const initQuestionPage = () => {
   userInterface.appendChild(scoreElement);
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-  const selectAnswer = (answerElement) => {
-    const answers = document.querySelectorAll('li');
-    // answers.forEach((answer) => answer.classList.remove('selected'));
-    // answerElement.classList.add('selected');
-  };
-
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
+    const theCorrectAnswer = currentQuestion.correct;
     const answerElement = createAnswerElement(key, answerText);
-    // console.log(answerElement);
-    answerElement.addEventListener('click', (event) => {
-      selectAnswer(event.target);
+    const allOptions = document.querySelector('.answer-ul').children;
 
-      const selectedElement = document.querySelector('.selected');
-      console.log(selectedElement);
-      if (key === currentQuestion.correct) {
-        selectedElement.style.backgroundColor = 'green';
+    answerElement.addEventListener('click', (event) => {
+      const selectedElement = event.target;
+      if (key === theCorrectAnswer) {
+        selectedElement.classList.add('correct');
         score++;
+
+        for (const option of allOptions) {
+          option.classList.add('disabled');
+        }
       } else {
-        selectedElement.style.backgroundColor = 'red';
-        // const rightAnswer = currentQuestion.answers[currentQuestion.correct];
-        // console.log(`The correct answer is ${rightAnswer}`);
-        // rightAnswer.classList.add('right');
-        // document.querySelector('right').style.backgroundColor = 'green';
+        selectedElement.classList.add('wrong');
+
+        for (const option of allOptions) {
+          if (option.innerText[0] === theCorrectAnswer) {
+            option.classList.add('correct');
+          }
+          option.classList.add('disabled');
+        }
       }
     });
 
@@ -56,7 +56,7 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
-  const updateScore = () => {
+  const updateScore = (score) => {
     const scoreDisplay = document.getElementById(SCORE_DISPLAY_ID);
     scoreDisplay.innerHTML = `Score: ${score}`;
   };
