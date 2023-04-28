@@ -15,6 +15,11 @@ export const initWelcomePage = () => {
     .addEventListener('click', startQuiz);
 };
 
+const headerEl = document.querySelector('.header');
+
+console.log(headerEl);
 const startQuiz = () => {
   initQuestionPage();
+  // When user click start quiz header will be disappear
+  headerEl.style.display = 'none';
 };
