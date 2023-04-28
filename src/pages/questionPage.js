@@ -26,28 +26,27 @@ export const initQuestionPage = (quizDataFromLocalStorage = []) => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-  // const selectAnswer = (answerElement) => {
-  //   const answers = document.querySelectorAll('li');
-  //   answers.forEach((answer) => answer.classList.remove('selected'));
-  //   answerElement.classList.add('selected');
-  // };
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const correctAnswer = currentQuestion.correct;
+    const theCorrectAnswer = currentQuestion.correct;
+
     const answerElement = createAnswerElement(key, answerText);
     const allOptions = document.querySelector('.answer-ul').children;
 
     answerElement.addEventListener('click', (event) => {
       const selectedElement = event.target;
+
       if (key === correctAnswer) {
         selectedElement.classList.add('correct');
         currentQuestion.isAnswerCorrect = true;
         localStorage.setItem(QUIZ_DATA_KEY, JSON.stringify(customQuizData));
+
         for (const option of allOptions) {
           option.classList.add('disabled');
         }
       } else {
         selectedElement.classList.add('wrong');
+
         currentQuestion.isAnswerCorrect = false;
         localStorage.setItem(QUIZ_DATA_KEY, JSON.stringify(customQuizData));
         console.log('-------currentQuestion', currentQuestion);
@@ -58,6 +57,7 @@ export const initQuestionPage = (quizDataFromLocalStorage = []) => {
             option.classList.add('correct');
           }
           //otherwise disabled
+
           option.classList.add('disabled');
         }
       }
