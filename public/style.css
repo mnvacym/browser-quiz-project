@@ -105,16 +105,14 @@ ul {
 .correct {
   background-color: green;
 }
-<<<<<<< HEAD
+
 .wrong {
   background-color: red;
 }
 .disabled {
   pointer-events: none;
 }
-=======
 
->>>>>>> origin/feat-check-answer
 .answer-list:hover {
   border: 2px solid green;
 }
