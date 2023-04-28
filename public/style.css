@@ -27,6 +27,7 @@ html {
   padding: 2rem 2rem;
   color: #fff;
   font-size: 1.5rem;
+  width: 100vw;
 }
 
 .header .your {
@@ -115,6 +116,16 @@ ul {
   transition: ease-in-out 0.5s;
   font-weight: bold;
 }
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
+.disabled {
+  pointer-events: none;
+}
 
 .answer-list:hover {
   border: 2px solid var(--primary-color);
@@ -141,6 +152,14 @@ ul {
 .next-button:hover {
   background-color: var(--primary-color);
   color: #fff;
+}
+
+/* user-timer */
+#user-timer {
+  text-align: center;
+  color: rgb(255, 128, 0);
+  padding-top: 1rem;
+  font-size: 2rem;
 }
 
 /* Footer */
