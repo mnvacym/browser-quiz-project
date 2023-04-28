@@ -26,20 +26,9 @@ export const initQuestionPage = (quizDataFromLocalStorage = []) => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-<<<<<<< HEAD
-=======
-  // const selectAnswer = (answerElement) => {
-  //   const answers = document.querySelectorAll('li');
-  //   answers.forEach((answer) => answer.classList.remove('selected'));
-  //   answerElement.classList.add('selected');
-  // };
-
->>>>>>> 579a09a (local storage functionality added, data.js updated, title updated)
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const correctAnswer = currentQuestion.correct;
     const answerElement = createAnswerElement(key, answerText);
-<<<<<<< HEAD
-=======
     const allOptions = document.querySelector('.answer-ul').children;
 
     answerElement.addEventListener('click', (event) => {
@@ -67,7 +56,6 @@ export const initQuestionPage = (quizDataFromLocalStorage = []) => {
         }
       }
     });
->>>>>>> 579a09a (local storage functionality added, data.js updated, title updated)
     answersListElement.appendChild(answerElement);
   }
 
