@@ -2,9 +2,8 @@ import { SCORE_DISPLAY_ID } from '../constants.js';
 
 export const createScoreElement = () => {
   const element = Object.assign(document.createElement('div'), {
-    id: 'score-display-id',
+    id: SCORE_DISPLAY_ID,
   });
-  element.innerHTML = String.raw`
-    ${SCORE_DISPLAY_ID}
-  `;
+
   return element;
+};

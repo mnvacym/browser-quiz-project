@@ -206,3 +206,7 @@ footer ul li a {
     font-size: 1.3rem;
   }
 }
+#score-display-id {
+  color: white;
+  font-size: 36px;
+}
