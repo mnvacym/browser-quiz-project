@@ -22,6 +22,7 @@ html {
   padding: 2rem 2rem;
   color: #fff;
   font-size: 1.5rem;
+  width: 100vw;
 }
 
 .header .your {
@@ -140,14 +141,22 @@ ul {
   color: #111;
 }
 
+/* user-timer */
+#user-timer {
+  text-align: center;
+  color: rgb(255, 128, 0);
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+
 /* Footer */
 footer {
   background-color: rgb(23, 22, 22);
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 footer ul li a {
