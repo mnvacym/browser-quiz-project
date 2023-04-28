@@ -23,9 +23,7 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-
       isAnswerCorrect: true,
-
     },
     {
       text: 'Which claim about Dutch is true?',
@@ -37,9 +35,7 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
-
       isAnswerCorrect: true,
-
     },
     {
       text: 'What is jenever?',
@@ -53,7 +49,6 @@ export const quizData = {
       correct: 'c',
       selected: null,
       isAnswerCorrect: true,
-
     },
     {
       text: 'In which Dutch city was the European Union formed?',
@@ -64,9 +59,7 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
-
       isAnswerCorrect: true,
-
     },
     {
       text:
@@ -79,9 +72,7 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
-
       isAnswerCorrect: true,
-
     },
     {
       text:
@@ -94,7 +85,6 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
-
       isAnswerCorrect: true,
     },
     {
@@ -107,7 +97,6 @@ export const quizData = {
       correct: 'b',
       selected: null,
       isAnswerCorrect: true,
-
     },
     {
       text: 'Which claim about Dutch is true?',
@@ -119,7 +108,7 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
-
+      isAnswerCorrect: true,
     },
     {
       text: 'What for the windmills were initially created?',
@@ -131,7 +120,6 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
-
       isAnswerCorrect: true,
     },
 
@@ -146,9 +134,7 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-
       isAnswerCorrect: true,
-
     },
 
     {
@@ -161,9 +147,7 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-
       isAnswerCorrect: true,
-
     },
     // Add more questions here
   ],
