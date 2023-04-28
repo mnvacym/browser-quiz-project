@@ -19,9 +19,16 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
+  const selectAnswer = (answerElement) => {
+    const answers = document.querySelectorAll('li');
+    answers.forEach((answer) => answer.classList.remove('selected'));
+    answerElement.classList.add('selected');
+  };
+
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const theCorrectAnswer = currentQuestion.correct;
     const answerElement = createAnswerElement(key, answerText);
+<<<<<<< HEAD
     const allOptions = document.querySelector('.answer-ul').children;
 
     answerElement.addEventListener('click', (event) => {
@@ -41,6 +48,20 @@ export const initQuestionPage = () => {
           }
           option.classList.add('disabled');
         }
+=======
+    console.log(answerElement);
+    answerElement.addEventListener('click', (event) => {
+      selectAnswer(event.target);
+      const selectedElement = document.querySelector('.selected');
+      if (key === theCorrectAnswer) {
+        selectedElement.style.backgroundColor = 'green';
+      } else {
+        const correctElement = document.querySelector(
+          `li[data-key="${theCorrectAnswer}"]`
+        );
+        selectedElement.style.backgroundColor = 'red';
+        correctElement.style.backgroundColor = 'green';
+>>>>>>> origin/feat-check-answer
       }
     });
     answersListElement.appendChild(answerElement);
