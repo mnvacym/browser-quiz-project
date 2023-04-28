@@ -5,7 +5,7 @@ export const createScoreElement = () => {
     className: 'score-display-id',
   });
   element.innerHTML = String.raw`
-    ${score}
+    ${SCORE_DISPLAY_ID}
   `;
   return element;
 };

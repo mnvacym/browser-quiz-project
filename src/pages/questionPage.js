@@ -19,13 +19,15 @@ export const initQuestionPage = () => {
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
+  const scoreElement = createScoreElement();
 
+  userInterface.appendChild(scoreElement);
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
   const selectAnswer = (answerElement) => {
     const answers = document.querySelectorAll('li');
-    answers.forEach((answer) => answer.classList.remove('selected'));
-    answerElement.classList.add('selected');
+    // answers.forEach((answer) => answer.classList.remove('selected'));
+    // answerElement.classList.add('selected');
   };
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
@@ -41,10 +43,10 @@ export const initQuestionPage = () => {
         score++;
       } else {
         selectedElement.style.backgroundColor = 'red';
-        const rightAnswer = currentQuestion.answers[currentQuestion.correct];
-        console.log(`The correct answer is ${rightAnswer}`);
-        rightAnswer.classList.add('right');
-        document.querySelector('right').style.backgroundColor = 'green';
+        // const rightAnswer = currentQuestion.answers[currentQuestion.correct];
+        // console.log(`The correct answer is ${rightAnswer}`);
+        // rightAnswer.classList.add('right');
+        // document.querySelector('right').style.backgroundColor = 'green';
       }
     });
 
