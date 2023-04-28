@@ -1,5 +1,5 @@
 import { ANSWERS_LIST_ID } from '../constants.js';
-import { NEXT_QUESTION_BUTTON_ID} from '../constants.js';
+import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 
 /**
  * Create a full question element
@@ -9,7 +9,7 @@ export const createQuestionElement = (question) => {
   const element = Object.assign(document.createElement('div'), {
     className: 'question-div',
   });
-  
+
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
 
