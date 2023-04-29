@@ -1,0 +1,225 @@
+/* universal selector */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* define variable */
+:root {
+  --primary-color: #ffa500;
+}
+/* Html */
+html {
+  background: url(https://wallpapercave.com/wp/wp4698902.jpg) no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(23, 22, 22);
+  padding: 2rem 2rem;
+  color: #fff;
+  font-size: 1.5rem;
+  width: 100vw;
+}
+
+.header .your {
+  color: var(--primary-color);
+}
+
+/* user-timer */
+#user-timer {
+  text-align: center;
+  color: var(--primary-color);
+  padding-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+/* welcome-heading */
+.welcome-heading {
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+/* start quiz button*/
+.welcome-button {
+  background-color: rgb(245, 246, 250);
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: rgb(9, 1, 1);
+  transition: ease-in-out 0.5s;
+  font-weight: bold;
+}
+
+.welcome-button:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+/* centered  */
+.centered {
+  border-radius: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.scrollable {
+  height: auto;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+/* styling welcome-page */
+.welcome-page {
+  background-color: rgb(231, 160, 66);
+  padding: 4rem;
+  border-radius: 1rem;
+  opacity: 0.8;
+}
+
+/* question-page */
+.question-div {
+  background-color: rgb(23, 22, 22);
+  color: #fff;
+  padding: 3rem;
+  width: 70vw;
+
+  height: auto;
+  border-radius: 1rem;
+}
+
+/* answer-list */
+.answer-list {
+  border: 2px solid #fff;
+  margin-top: 3rem;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  border-radius: 3rem;
+  transition: ease-in-out 0.5s;
+  font-weight: bold;
+}
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
+.disabled {
+  pointer-events: none;
+}
+
+.answer-list:hover {
+  border: 2px solid var(--primary-color);
+}
+
+/* answer-ul */
+.answer-ul {
+  margin: 0 auto;
+  width: 50%;
+}
+
+/* next-button */
+.next-button {
+  margin-top: 3rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+  border: none;
+  font-weight: bold;
+}
+
+.next-button:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* user-timer */
+#user-timer {
+  text-align: center;
+  color: rgb(255, 128, 0);
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(23, 22, 22);
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer ul li a {
+  list-style-type: none;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* responsive */
+
+/* Styles for screens between 481px and 768px */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .answer-ul {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .answer-list {
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* Styles for screens between 769px and 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1124px) {
+  .answer-ul {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .answer-list {
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* Styles for screens between 769px and 1024px */
+@media only screen and (min-width: 1124px) and (max-width: 1424px) {
+  .answer-ul {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .answer-list {
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1.3rem;
+  }
+}
+#score-display-id {
+  color: white;
+  font-size: 36px;
+}
