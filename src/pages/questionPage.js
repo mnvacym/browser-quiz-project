@@ -3,14 +3,10 @@ import {
   NEXT_QUESTION_BUTTON_ID,
   QUIZ_DATA_KEY,
   USER_INTERFACE_ID,
-  SCORE_DISPLAY_ID,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
-import { createScoreElement } from '../views/scoreView.js';
 import { quizData } from '../data.js';
-import { updateScore } from '../utils/updateScore.js';
-let score = 0;
 
 export const initQuestionPage = (quizDataFromLocalStorage = []) => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -22,39 +18,36 @@ export const initQuestionPage = (quizDataFromLocalStorage = []) => {
 
   const currentQuestion =
     customQuizData.questions[quizData.currentQuestionIndex];
+  console.log('=====currentQuestion', currentQuestion);
+
   const questionElement = createQuestionElement(currentQuestion.text);
+
   userInterface.appendChild(questionElement);
 
-
-  const scoreElement = createScoreElement();
-  userInterface.appendChild(scoreElement);
-
-
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+
+  // const selectAnswer = (answerElement) => {
+  //   const answers = document.querySelectorAll('li');
+  //   answers.forEach((answer) => answer.classList.remove('selected'));
+  //   answerElement.classList.add('selected');
+  // };
+
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const correctAnswer = currentQuestion.correct;
     const answerElement = createAnswerElement(key, answerText);
     const allOptions = document.querySelector('.answer-ul').children;
+
     answerElement.addEventListener('click', (event) => {
       const selectedElement = event.target;
-
       if (key === correctAnswer) {
         selectedElement.classList.add('correct');
-
         currentQuestion.isAnswerCorrect = true;
         localStorage.setItem(QUIZ_DATA_KEY, JSON.stringify(customQuizData));
-
-        score++;
-        updateScore(score);
-
-
         for (const option of allOptions) {
           option.classList.add('disabled');
         }
       } else {
         selectedElement.classList.add('wrong');
-        updateScore(score);
-
         currentQuestion.isAnswerCorrect = false;
         localStorage.setItem(QUIZ_DATA_KEY, JSON.stringify(customQuizData));
         console.log('-------currentQuestion', currentQuestion);
@@ -65,7 +58,6 @@ export const initQuestionPage = (quizDataFromLocalStorage = []) => {
             option.classList.add('correct');
           }
           //otherwise disabled
-
           option.classList.add('disabled');
         }
       }
