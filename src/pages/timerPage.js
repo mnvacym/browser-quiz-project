@@ -12,19 +12,24 @@ export const initTimer = () => {
     const timer = createTimer();
     userInterface.appendChild(timer);
 
+    //  setInterval() function is used to execute the callback function
     timerInterval = setInterval(() => {
-      seconds++;
-      if (seconds === 60) {
-        seconds = 0;
-        minutes++;
-      }
-      const showTimer = `${minutes
-        .toString()
-        .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-      timer.textContent = showTimer;
-    }, 1000);
-  };
+      //  incrementing the seconds
 
-  const startQuizButton = document.getElementById(START_QUIZ_BUTTON_ID);
-  startQuizButton.addEventListener('click', startTimer);
+      timerInterval = setInterval(() => {
+        seconds++;
+        if (seconds === 60) {
+          seconds = 0;
+          minutes++;
+        }
+        const showTimer = `${minutes
+          .toString()
+          .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        timer.textContent = showTimer;
+      }, 1000);
+    });
+
+    const startQuizButton = document.getElementById(START_QUIZ_BUTTON_ID);
+    startQuizButton.addEventListener('click', startTimer);
+  };
 };
