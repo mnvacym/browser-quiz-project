@@ -11,6 +11,7 @@ export const createWelcomeElement = () => {
 
   element.innerHTML = String.raw`
 
+
     <h1 class='welcome-heading'>Want to know more about the Netherlands? Have fun with our quiz🚀</h1>
     <button class='welcome-button'  id="${START_QUIZ_BUTTON_ID}">start quiz</button>
 
