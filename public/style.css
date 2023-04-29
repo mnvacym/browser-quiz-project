@@ -138,18 +138,20 @@ ul {
 }
 /* give up button*/
 #give-up-button {
-  background-color: #f44336;
+  background-color: #bc7c1b;
   color: white;
-  padding: 100px 24px;
+  padding: 13px 30px;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
-  margin-right: 16px;
+  transition: ease-in-out 0.5s;
+  font-weight: bold;
 }
 
 #give-up-button:hover {
-  background-color: #ff6666;
+  background-color: #83520d;
+  border: 2px solid var(--primary-color);
 }
 
 /* next-button */
