@@ -25,6 +25,7 @@ export const initQuestionPage = () => {
   userInterface.appendChild(scoreElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+  updateScore(score);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const theCorrectAnswer = currentQuestion.correct;
@@ -43,7 +44,6 @@ export const initQuestionPage = () => {
         }
       } else {
         selectedElement.classList.add('wrong');
-        updateScore(score);
 
         for (const option of allOptions) {
           if (option.innerText[0] === theCorrectAnswer) {
