@@ -7,7 +7,7 @@ import {
 import { createTimer } from '../views/timerView.js';
 
 let isTimerDisplayed = false;
-let startTimer
+let startTimer;
 let seconds = 0;
 let minutes = 0;
 let timerInterval;
@@ -15,7 +15,7 @@ let timerInterval;
 export const initTimer = () => {
   // If the timer is already running, stop the timer and reset the variables
 
-   startTimer = () => {
+  startTimer = () => {
     const userInterface = document.getElementById(TIMER_QUESTION_ID);
     userInterface.innerHTML = '';
     const timer = createTimer();
