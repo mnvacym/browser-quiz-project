@@ -23,7 +23,9 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
+
       isAnswerCorrect: null,
+
     },
     {
       text: 'Which claim about Dutch is true?',
@@ -35,7 +37,9 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
+
       isAnswerCorrect: null,
+
     },
     {
       text: 'What is jenever?',
@@ -48,6 +52,7 @@ export const quizData = {
       correct: 'c',
       selected: null,
       isAnswerCorrect: null,
+
     },
     {
       text: 'In which Dutch city was the European Union formed?',
@@ -58,7 +63,9 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
+
       isAnswerCorrect: null,
+
     },
     {
       text:
@@ -71,7 +78,9 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
+
       isAnswerCorrect: null,
+
     },
     {
       text:
@@ -84,7 +93,9 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
+
       isAnswerCorrect: null,
+
     },
     {
       text: 'Which city serves as the sit of the Dutch government?',
@@ -95,7 +106,9 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
+
       isAnswerCorrect: null,
+
     },
     {
       text: 'What for the windmills were initially created?',
@@ -107,10 +120,15 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
+
       isAnswerCorrect: null,
+
     },
+
     {
+
       text: 'What are "hune - bedden"?',
+
       answers: {
         a:
           'these are the ancestors of Dutch people living here in the 13th century',
@@ -119,7 +137,9 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
+
       isAnswerCorrect: null,
+
     },
 
     {
@@ -132,7 +152,9 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
+
       isAnswerCorrect: null,
+
     },
     // Add more questions here
   ],
