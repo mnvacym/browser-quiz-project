@@ -13,8 +13,6 @@ export const initTimer = () => {
     userInterface.appendChild(timer);
 
     //  setInterval() function is used to execute the callback function
-    timerInterval = setInterval(() => {
-      //  incrementing the seconds
 
       timerInterval = setInterval(() => {
         seconds++;
@@ -27,9 +25,9 @@ export const initTimer = () => {
           .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         timer.textContent = showTimer;
       }, 1000);
-    });
+    };
 
     const startQuizButton = document.getElementById(START_QUIZ_BUTTON_ID);
     startQuizButton.addEventListener('click', startTimer);
   };
-};
+

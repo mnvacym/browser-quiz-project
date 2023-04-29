@@ -2,10 +2,26 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  USER_HEADER_INTERFACE_ID,
+  START_QUIZ_BUTTON_ID,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { createResetQuiz } from '../views/resetQuizView.js';
+
+export const initResetQuiz = () => {
+  const userHeaderInterface = document.getElementById(USER_HEADER_INTERFACE_ID);
+  userHeaderInterface.innerHTML = '';
+  const resetButton = createResetQuiz();
+  userHeaderInterface.appendChild(resetButton);
+  // resetButton.style.display = 'none';
+
+  // const startQuizButton = document.getElementById(START_QUIZ_BUTTON_ID);
+  // startQuizButton.addEventListener('click', function () {
+  //   resetButton.style.display = 'block';
+  // });
+};
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);

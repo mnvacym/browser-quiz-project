@@ -17,17 +17,19 @@ html {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Courier New', Courier, monospace;
+
 }
 
 /* header */
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: rgb(23, 22, 22);
   padding: 2rem 2rem;
   color: #fff;
   font-size: 1.5rem;
-  width: 100vw;
+ width: 100vw;
 }
 
 .header .your {
@@ -38,7 +40,7 @@ html {
 #user-timer {
   text-align: center;
   color: var(--primary-color);
-  padding-top: 1rem;
+ padding-right: 7rem;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -100,7 +102,6 @@ ul {
   color: #fff;
   padding: 3rem;
   width: 70vw;
-
   height: auto;
   border-radius: 1rem;
 }
@@ -155,21 +156,17 @@ ul {
 }
 
 /* user-timer */
-#user-timer {
-  text-align: center;
-  color: rgb(255, 128, 0);
-  padding-top: 1rem;
-  font-size: 2rem;
-}
+
 
 /* Footer */
 footer {
   background-color: rgb(23, 22, 22);
   position: absolute;
   bottom: 0;
-  width: 100vw;
   text-align: center;
   padding: 1rem;
+margin: 0;
+width: 100vw;
 }
 
 footer ul li a {
@@ -177,8 +174,14 @@ footer ul li a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+  width: 100%;
 }
 
+
+#reset-quiz-button {
+  background-color: red;
+  padding: 3rem;
+}
 /* responsive */
 
 /* Styles for screens between 481px and 768px */
