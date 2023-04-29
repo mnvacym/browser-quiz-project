@@ -17,7 +17,6 @@ html {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Courier New', Courier, monospace;
-
 }
 
 /* header */
@@ -27,9 +26,9 @@ html {
   align-items: center;
   background-color: rgb(23, 22, 22);
   padding: 2rem 2rem;
+  height: 80px;
   color: #fff;
   font-size: 1.5rem;
- width: 100vw;
 }
 
 .header .your {
@@ -40,7 +39,6 @@ html {
 #user-timer {
   text-align: center;
   color: var(--primary-color);
- padding-right: 7rem;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -139,6 +137,7 @@ ul {
 }
 
 /* next-button */
+
 .next-button {
   margin-top: 3rem;
   padding: 1rem;
@@ -157,7 +156,6 @@ ul {
 
 /* user-timer */
 
-
 /* Footer */
 footer {
   background-color: rgb(23, 22, 22);
@@ -165,8 +163,8 @@ footer {
   bottom: 0;
   text-align: center;
   padding: 1rem;
-margin: 0;
-width: 100vw;
+  margin: 0;
+  width: 100vw;
 }
 
 footer ul li a {
@@ -177,10 +175,20 @@ footer ul li a {
   width: 100%;
 }
 
+.button-container #reset-quiz-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+  border: none;
+  font-weight: bold;
+}
 
-#reset-quiz-button {
-  background-color: red;
-  padding: 3rem;
+.button-container #reset-quiz-button:hover {
+  color:#111
 }
 /* responsive */
 
