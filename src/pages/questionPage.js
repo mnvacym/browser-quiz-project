@@ -8,18 +8,15 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
-
 export const initQuestionPage = (quizDataFromLocalStorage) => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
   // const isDataInLocalStorage = quizDataFromLocalStorage.length > 0;
   const customQuizData = quizDataFromLocalStorage
-
     ? quizDataFromLocalStorage
     : quizData;
 
   const currentQuestion =
-
     customQuizData.questions[customQuizData.currentQuestionIndex];
 
   console.log('=====currentQuestion', currentQuestion);
