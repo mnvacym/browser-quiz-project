@@ -8,6 +8,7 @@ const loadApp = () => {
   const quizDataFromLocalStorage = JSON.parse(
     localStorage.getItem(QUIZ_DATA_KEY)
   );
+
   if (quizDataFromLocalStorage) {
     initQuestionPage(quizDataFromLocalStorage);
   } else {

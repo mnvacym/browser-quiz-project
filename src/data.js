@@ -23,7 +23,8 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      isAnswerCorrect: true,
+
+      isAnswerCorrect: null,
     },
     {
       text: 'Which claim about Dutch is true?',
@@ -35,7 +36,8 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
-      isAnswerCorrect: true,
+
+      isAnswerCorrect: null,
     },
     {
       text: 'What is jenever?',
@@ -45,10 +47,9 @@ export const quizData = {
         c: 'it is a strong alcohol drink',
         d: 'it is the name of an annual festival in Amsterdam',
       },
-
       correct: 'c',
       selected: null,
-      isAnswerCorrect: true,
+      isAnswerCorrect: null,
     },
     {
       text: 'In which Dutch city was the European Union formed?',
@@ -59,7 +60,8 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
-      isAnswerCorrect: true,
+
+      isAnswerCorrect: null,
     },
     {
       text:
@@ -72,7 +74,8 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
-      isAnswerCorrect: true,
+
+      isAnswerCorrect: null,
     },
     {
       text:
@@ -85,7 +88,8 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
-      isAnswerCorrect: true,
+
+      isAnswerCorrect: null,
     },
     {
       text: 'Which city serves as the sit of the Dutch government?',
@@ -96,19 +100,8 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      isAnswerCorrect: true,
-    },
-    {
-      text: 'Which claim about Dutch is true?',
-      answers: {
-        a: 'the Dutch are the tallest nation in Europe',
-        b:
-          'the Dutch have the biggest amount of dogs per one person in the world',
-        c: 'the Dutch are the happiest people according to EU statistics ',
-      },
-      correct: 'a',
-      selected: null,
-      isAnswerCorrect: true,
+
+      isAnswerCorrect: null,
     },
     {
       text: 'What for the windmills were initially created?',
@@ -120,11 +113,12 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
-      isAnswerCorrect: true,
+
+      isAnswerCorrect: null,
     },
 
     {
-      text: 'What are hune - bedden?',
+      text: 'What are "hune - bedden"?',
 
       answers: {
         a:
@@ -134,7 +128,8 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      isAnswerCorrect: true,
+
+      isAnswerCorrect: null,
     },
 
     {
@@ -147,7 +142,8 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      isAnswerCorrect: true,
+
+      isAnswerCorrect: null,
     },
     // Add more questions here
   ],
