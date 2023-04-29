@@ -3,9 +3,14 @@
   margin: 0;
   padding: 0;
 }
+
+/* define variable */
+:root {
+  --primary-color: #ffa500;
+}
 /* Html */
 html {
-  background: url(https://wallpaperaccess.com/full/4745439.jpg) no-repeat center
+  background: url(https://wallpapercave.com/wp/wp4698902.jpg) no-repeat center
     center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -26,9 +31,17 @@ html {
 }
 
 .header .your {
-  color: rgb(149, 138, 124);
+  color: var(--primary-color);
 }
 
+/* user-timer */
+#user-timer {
+  text-align: center;
+  color: var(--primary-color);
+  padding-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
 /* welcome-heading */
 .welcome-heading {
   margin-bottom: 2rem;
@@ -49,7 +62,7 @@ html {
 }
 
 .welcome-button:hover {
-  background-color: rgb(58, 51, 51);
+  background-color: #111;
   color: #fff;
 }
 
@@ -75,10 +88,10 @@ ul {
 
 /* styling welcome-page */
 .welcome-page {
-  background-color: rgb(149, 138, 124);
+  background-color: rgb(231, 160, 66);
   padding: 4rem;
   border-radius: 1rem;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 /* question-page */
@@ -115,7 +128,7 @@ ul {
 }
 
 .answer-list:hover {
-  border: 2px solid green;
+  border: 2px solid var(--primary-color);
 }
 
 /* answer-ul */
@@ -137,8 +150,8 @@ ul {
 }
 
 .next-button:hover {
-  background-color: rgb(78, 168, 228);
-  color: #111;
+  background-color: var(--primary-color);
+  color: #fff;
 }
 
 /* user-timer */
@@ -205,4 +218,8 @@ footer ul li a {
     padding: 1rem;
     font-size: 1.3rem;
   }
+}
+#score-display-id {
+  color: white;
+  font-size: 36px;
 }
