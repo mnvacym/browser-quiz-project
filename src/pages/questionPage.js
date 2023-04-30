@@ -35,6 +35,7 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
   console.log('=====currentQuestion', currentQuestion);
 
   const questionElement = createQuestionElement(currentQuestion.text);
+  console.log(questionElement);
 
   userInterface.appendChild(questionElement);
 
@@ -60,21 +61,6 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
     });
     userInterface.appendChild(giveUpButton);
     // ---------------------------------   End give up button --------------------------//
-
-    if (currentQuestion.isAnswerCorrect) {
-      if (key === currentQuestion.correct) {
-        answerElement.classList.add('correct');
-      } else if (key === currentQuestion.isAnswerCorrect) {
-        answerElement.classList.add('wrong');
-      }
-      nextButton.classList.remove('disabled');
-      localStorage.setItem(QUIZ_DATA_KEY, JSON.stringify(customQuizData));
-      for (const option of allOptions) {
-        option.classList.add('disabled');
-      }
-    } else {
-      nextButton.classList.add('disabled');
-    }
 
     answerElement.addEventListener('click', (event) => {
       const selectedElement = event.target;
