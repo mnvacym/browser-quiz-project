@@ -29,9 +29,9 @@ export const initTimer = () => {
         seconds = 0;
         minutes++;
       }
-      const showTimer = `${minutes
+      const showTimer = `${minutes.toString().padStart(2, '0')}:${seconds
         .toString()
-        .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        .padStart(2, '0')}`;
       timer.textContent = showTimer;
     }, 1000);
   };

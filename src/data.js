@@ -30,8 +30,7 @@ export const quizData = {
       text: 'Which claim about Dutch is true?',
       answers: {
         a: 'the Dutch are the tallest nation in Europe',
-        b:
-          'the Dutch have the biggest amount of dogs per one person in the world',
+        b: 'the Dutch have the biggest amount of dogs per one person in the world',
         c: 'the Dutch are the happiest people according to EU statistics ',
       },
       correct: 'a',
@@ -64,8 +63,7 @@ export const quizData = {
       isAnswerCorrect: null,
     },
     {
-      text:
-        'What animals are treated in the hospital of Pietersburen (province of Groningen)?',
+      text: 'What animals are treated in the hospital of Pietersburen (province of Groningen)?',
       answers: {
         a: 'dolphins',
         b: 'cows and sheep',
@@ -78,8 +76,7 @@ export const quizData = {
       isAnswerCorrect: null,
     },
     {
-      text:
-        'What is the national motto of the Netherlands? It was also written on the coins before the Euro currency.',
+      text: 'What is the national motto of the Netherlands? It was also written on the coins before the Euro currency.',
       answers: {
         a: 'We will survive',
         b: 'We will conquer',
@@ -121,8 +118,7 @@ export const quizData = {
       text: 'What are "hune - bedden"?',
 
       answers: {
-        a:
-          'these are the ancestors of Dutch people living here in the 13th century',
+        a: 'these are the ancestors of Dutch people living here in the 13th century',
         b: 'these are massive stones, in the South and East of the country',
         c: 'this is a traditional Dutch skate tournaments',
       },
