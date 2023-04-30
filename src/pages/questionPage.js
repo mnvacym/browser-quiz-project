@@ -7,6 +7,7 @@ import {
   TIMER_QUESTION_ID,
   START_QUIZ_BUTTON_ID,
 } from '../constants.js';
+import { createGiveUpButton } from '../views/giveUpView.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
@@ -14,6 +15,11 @@ import { createResetQuiz } from '../views/resetQuizView.js';
 import { initWelcomePage } from './welcomePage.js';
 import { initResetTimer } from './timerPage.js';
 import { initTimer } from './timerPage.js';
+
+//----------- select give up parent element--------->
+const giveUpParent = document.querySelector('#user-interface #give-up');
+const giveUpButton = createGiveUpButton();
+//----------- End select give up parent element----->
 
 export const initQuestionPage = (quizDataFromLocalStorage) => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -42,6 +48,17 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
     const allOptions = document.querySelector('.answer-ul').children;
+     // ---------------------------------   give up button --------------------------//
+    giveUpButton.addEventListener('click', () => {
+      for (const option of allOptions) {
+        if (option.innerText[0] === correctAnswer) {
+          option.classList.add('correct');
+        }
+        option.classList.add('disabled');
+      }
+    });
+    userInterface.appendChild(giveUpButton);
+    // ---------------------------------   End give up button --------------------------//
 
     if (currentQuestion.isAnswerCorrect) {
       if (key === currentQuestion.correct) {
