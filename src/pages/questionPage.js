@@ -48,6 +48,7 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
     const allOptions = document.querySelector('.answer-ul').children;
+
     // ---------------------------------   give up button --------------------------//
     giveUpButton.addEventListener('click', () => {
       for (const option of allOptions) {
@@ -110,7 +111,7 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
 const nextQuestion = (quizDataFromLocalStorage) => {
   quizDataFromLocalStorage.currentQuestionIndex =
     quizDataFromLocalStorage.currentQuestionIndex + 1;
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  // quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   initQuestionPage(quizDataFromLocalStorage);
 };
 
