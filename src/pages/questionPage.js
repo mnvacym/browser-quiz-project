@@ -110,7 +110,7 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
 const nextQuestion = (quizDataFromLocalStorage) => {
   quizDataFromLocalStorage.currentQuestionIndex =
     quizDataFromLocalStorage.currentQuestionIndex + 1;
-  // quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   initQuestionPage(quizDataFromLocalStorage);
 };
 
