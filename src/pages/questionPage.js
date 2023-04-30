@@ -48,7 +48,7 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
     const allOptions = document.querySelector('.answer-ul').children;
-     // ---------------------------------   give up button --------------------------//
+    // ---------------------------------   give up button --------------------------//
     giveUpButton.addEventListener('click', () => {
       for (const option of allOptions) {
         if (option.innerText[0] === correctAnswer) {

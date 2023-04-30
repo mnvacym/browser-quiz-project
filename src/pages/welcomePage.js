@@ -4,7 +4,7 @@ import {
   RESET_QUIZ_BUTTON_ID,
   USER_HEADER_INTERFACE_ID,
 } from '../constants.js';
- 
+
 import { quizData } from '../data.js';
 import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
