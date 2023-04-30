@@ -6,8 +6,11 @@ export const createTimer = () => {
   timerElement.textContent = '00:00';
   return timerElement;
 
+
   const timer = document.createElement('div');
   timer.setAttribute('id', TIMER_QUESTION_ID);
   timer.textContent = '00:00';
   return timer;
+
+
 };
