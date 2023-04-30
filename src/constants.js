@@ -13,3 +13,4 @@ export const TIMER_QUESTION_ID = 'user-timer';
 export const RESET_QUIZ_BUTTON_ID = 'rest-quiz-button';
 export const USER_HEADER_INTERFACE_ID = 'user-header-interface';
 export const QUIZ_DATA_KEY = 'quizData';
+export const GIVE_UP_BUTTON_ID = 'give-up-button';
