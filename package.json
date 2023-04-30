@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "prettier:write": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "prettier": "npm run prettier:write && npm run prettier:check"
   },
   "repository": {
     "type": "git",
