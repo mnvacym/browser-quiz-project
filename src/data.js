@@ -15,7 +15,7 @@ export const quizData = {
 
   questions: [
     {
-      text: 'Why orange is the national colour of the Netherlands?',
+      text: 'Why orange is the national color of the Netherlands?',
       answers: {
         a: 'it is the color of the sunset over the North sea',
         b: 'it is the color of Royal Dutch line, the house of Orange',

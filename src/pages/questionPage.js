@@ -7,15 +7,24 @@ import {
   TIMER_QUESTION_ID,
   START_QUIZ_BUTTON_ID,
 } from '../constants.js';
+import { createGiveUpButton } from '../views/giveUpView.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+
+//----------- select give up parent element--------->
+const giveUpParent = document.querySelector('#user-interface #give-up');
+const giveUpButton = createGiveUpButton();
+//----------- End select give up parent element----->
+export const initQuestionPage = () => {
+
 import { createResetQuiz } from '../views/resetQuizView.js';
 import { initWelcomePage } from './welcomePage.js';
 import { initResetTimer } from './timerPage.js';
 import { initTimer } from './timerPage.js';
 
 export const initQuestionPage = (quizDataFromLocalStorage) => {
+
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
   // const isDataInLocalStorage = quizDataFromLocalStorage.length > 0;
@@ -33,6 +42,30 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+
+
+  for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
+    const theCorrectAnswer = currentQuestion.correct;
+    const answerElement = createAnswerElement(key, answerText);
+    const allOptions = document.querySelector('.answer-ul').children;
+    // ---------------------------------   give up button --------------------------//
+    giveUpButton.addEventListener('click', () => {
+      for (const option of allOptions) {
+        if (option.innerText[0] === theCorrectAnswer) {
+          option.classList.add('correct');
+        }
+        option.classList.add('disabled');
+      }
+    });
+    userInterface.appendChild(giveUpButton);
+    // ---------------------------------   End give up button --------------------------//
+
+    //---------------------------------- select Answer && check Answer -----------------//
+    answerElement.addEventListener('click', (event) => {
+      const selectedElement = event.target;
+      if (key === theCorrectAnswer) {
+        selectedElement.classList.add('correct');
+
 
   const nextButton = document.getElementById(NEXT_QUESTION_BUTTON_ID);
   nextButton.addEventListener('click', () => nextQuestion(customQuizData));
@@ -68,11 +101,18 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
         selectedElement.classList.add('correct');
 
         localStorage.setItem(QUIZ_DATA_KEY, JSON.stringify(customQuizData));
+
         for (const option of allOptions) {
           option.classList.add('disabled');
         }
       } else {
         selectedElement.classList.add('wrong');
+
+
+        for (const option of allOptions) {
+          if (option.innerText[0] === theCorrectAnswer) {
+            option.classList.add('correct');
+          }
 
         localStorage.setItem(QUIZ_DATA_KEY, JSON.stringify(customQuizData));
         console.log('-------currentQuestion', currentQuestion);
@@ -83,6 +123,7 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
             option.classList.add('correct');
           }
           //otherwise disabled
+
           option.classList.add('disabled');
         }
       }
@@ -96,6 +137,7 @@ const nextQuestion = (quizDataFromLocalStorage) => {
   // quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   initQuestionPage(quizDataFromLocalStorage);
 };
+//---------------------------------- end select Answer && check Answer -----------------//
 
 let quizStart = false;
 
