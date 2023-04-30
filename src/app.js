@@ -5,6 +5,9 @@ import { QUIZ_DATA_KEY } from './constants.js';
 import { initQuestionPage } from './pages/questionPage.js';
 
 const loadApp = () => {
+  quizData.currentQuestionIndex = 0;
+  initWelcomePage();
+  initTimer();
   const quizDataFromLocalStorage = JSON.parse(
     localStorage.getItem(QUIZ_DATA_KEY)
   );

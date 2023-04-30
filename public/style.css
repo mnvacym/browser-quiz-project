@@ -23,11 +23,12 @@ html {
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: rgb(23, 22, 22);
   padding: 2rem 2rem;
+  height: 80px;
   color: #fff;
   font-size: 1.5rem;
-  width: 100vw;
 }
 
 .header .your {
@@ -38,7 +39,6 @@ html {
 #user-timer {
   text-align: center;
   color: var(--primary-color);
-  padding-top: 1rem;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -100,7 +100,6 @@ ul {
   color: #fff;
   padding: 3rem;
   width: 70vw;
-
   height: auto;
   border-radius: 1rem;
 }
@@ -138,6 +137,7 @@ ul {
 }
 
 /* next-button */
+
 .next-button {
   margin-top: 3rem;
   padding: 1rem;
@@ -155,21 +155,16 @@ ul {
 }
 
 /* user-timer */
-#user-timer {
-  text-align: center;
-  color: rgb(255, 128, 0);
-  padding-top: 1rem;
-  font-size: 2rem;
-}
 
 /* Footer */
 footer {
   background-color: rgb(23, 22, 22);
   position: absolute;
   bottom: 0;
-  width: 100vw;
   text-align: center;
   padding: 1rem;
+  margin: 0;
+  width: 100vw;
 }
 
 footer ul li a {
@@ -177,8 +172,24 @@ footer ul li a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+  width: 100%;
 }
 
+.button-container #reset-quiz-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+  border: none;
+  font-weight: bold;
+}
+
+.button-container #reset-quiz-button:hover {
+  color: #111;
+}
 /* responsive */
 
 /* Styles for screens between 481px and 768px */
