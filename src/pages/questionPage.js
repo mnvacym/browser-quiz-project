@@ -60,12 +60,31 @@ export const initQuestionPage = (quizDataFromLocalStorage) => {
       for (const option of allOptions) {
         if (option.innerText[0] === correctAnswer) {
           option.classList.add('correct');
+          currentQuestion.isAnswerCorrect = key;
         }
         option.classList.add('disabled');
       }
+      localStorage.setItem(QUIZ_DATA_KEY, JSON.stringify(customQuizData));
+
+      nextButton.classList.remove('disabled');
     });
     userInterface.appendChild(giveUpButton);
     // ---------------------------------   End give up button --------------------------//
+
+    if (currentQuestion.isAnswerCorrect) {
+      if (key === currentQuestion.correct) {
+        answerElement.classList.add('correct');
+      } else if (key === currentQuestion.isAnswerCorrect) {
+        answerElement.classList.add('wrong');
+      }
+      nextButton.classList.remove('disabled');
+      localStorage.setItem(QUIZ_DATA_KEY, JSON.stringify(customQuizData));
+      for (const option of allOptions) {
+        option.classList.add('disabled');
+      }
+    } else {
+      nextButton.classList.add('disabled');
+    }
 
     answerElement.addEventListener('click', (event) => {
       const selectedElement = event.target;

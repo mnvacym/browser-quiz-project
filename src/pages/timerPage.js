@@ -8,19 +8,20 @@ import { createTimer } from '../views/timerView.js';
 
 let isTimerDisplayed = false;
 let startTimer;
-let seconds = 0;
-let minutes = 0;
+//let seconds = 0;
+//let minutes = 0;
 let timerInterval;
 
 export const initTimer = () => {
   // If the timer is already running, stop the timer and reset the variables
 
-  startTimer = () => {
+  startTimer = (localtimer = { seconds: 0, minutes: 0 }) => {
     const userInterface = document.getElementById(TIMER_QUESTION_ID);
     userInterface.innerHTML = '';
     const timer = createTimer();
     userInterface.appendChild(timer);
 
+    let { seconds, minutes } = localtimer;
     //  setInterval() function is used to execute the callback function
 
     timerInterval = setInterval(() => {
@@ -32,17 +33,23 @@ export const initTimer = () => {
       const showTimer = `${minutes.toString().padStart(2, '0')}:${seconds
         .toString()
         .padStart(2, '0')}`;
+      localStorage.setItem('timer', JSON.stringify({ seconds, minutes }));
       timer.textContent = showTimer;
     }, 1000);
   };
 
   const startQuizButton = document.getElementById(START_QUIZ_BUTTON_ID);
-  startQuizButton.addEventListener('click', () => {
-    if (!isTimerDisplayed) {
-      startTimer();
-      isTimerDisplayed = true;
-    }
-  });
+  if (startQuizButton)
+    startQuizButton.addEventListener('click', () => {
+      if (!isTimerDisplayed) {
+        startTimer();
+        isTimerDisplayed = true;
+      }
+    });
+  else if (!isTimerDisplayed) {
+    startTimer(JSON.parse(localStorage.getItem('timer')));
+    isTimerDisplayed = true;
+  }
 };
 
 export const initResetTimer = () => {
@@ -54,7 +61,9 @@ export const initResetTimer = () => {
 
   const resetTimer = () => {
     const timer = document.getElementById(TIMER_QUESTION_ID);
+
     timer.textContent = '00:00';
+    localStorage.setItem('timer', JSON.stringify({ seconds: 0, minutes: 0 }));
     stopTimer();
     isTimerDisplayed = false;
   };
