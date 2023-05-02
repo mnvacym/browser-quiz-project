@@ -11,12 +11,12 @@ import {
 import { createGiveUpButton } from '../views/giveUpView.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
+import { createScoreElement } from '../views/scoreView.js';
 import { quizData } from '../data.js';
 import { createResetQuiz } from '../views/resetQuizView.js';
 import { initWelcomePage } from './welcomePage.js';
 import { initResetTimer } from './timerPage.js';
 import { initTimer } from './timerPage.js';
-import { createScoreElement } from '../views/scoreView.js';
 import { updateScore } from '../utils/updateScore.js';
 
 //----------- select give up parent element--------->
